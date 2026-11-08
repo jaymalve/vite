@@ -1,0 +1,4 @@
+{
+  "base": [["build", "pnpm run build"], ["typecheck", "pnpm run typecheck"], ["lint", "pnpm exec oxlint . --ignore-pattern '.ci-sdk/**'"], ["test", "pnpm run test-unit"]],
+  "ci": [["build", "CI_SDK run build --filter './packages/*'"], ["typecheck", "pnpm exec tsc -p scripts && CI_SDK run typecheck"], ["lint", "pnpm exec oxlint . --ignore-pattern '.ci-sdk/**'"], ["test", "CI_SDK test --since HEAD~1 --script test-unit"]]
+}
